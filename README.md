@@ -1,70 +1,154 @@
-# Getting Started with Create React App
+# Package Analyzer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A powerful tool to analyze and explore npm package dependencies, health metrics, and security insights.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Single Package Analysis**: Search and analyze any npm package for health metrics
+- **Batch Package Analysis**: Upload your package.json to analyze all dependencies at once
+- **Comprehensive Scoring**: Get detailed package health scores from 0-100
+- **Dependency Insights**: Understand package relationships and potential issues
+- **Modern UI**: Clean, responsive interface built with React and Tailwind CSS
 
-### `npm start`
+## Package Health Score
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Our scoring system evaluates packages on a scale of 0-100, where **100 represents a perfectly healthy package**. Here's how we calculate the score:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Scoring Breakdown (Total: 100 points)
 
-### `npm test`
+#### Popularity & Usage (30 points)
+- **Weekly Downloads** (15 points)
+  - >1M downloads: 15 points
+  - 100K-1M downloads: 12 points
+  - 10K-100K downloads: 8 points
+  - 1K-10K downloads: 4 points
+  - <1K downloads: 0 points
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **GitHub Stars** (10 points)
+  - >10K stars: 10 points
+  - 1K-10K stars: 7 points
+  - 100-1K stars: 4 points
+  - <100 stars: 0 points
 
-### `npm run build`
+- **Dependents Count** (5 points)
+  - >1K dependents: 5 points
+  - 100-1K dependents: 3 points
+  - 10-100 dependents: 1 point
+  - <10 dependents: 0 points
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Security & Maintenance (35 points)
+- **Last Update** (15 points)
+  - Updated within 1 month: 15 points
+  - Updated within 3 months: 12 points
+  - Updated within 6 months: 8 points
+  - Updated within 1 year: 4 points
+  - Updated >1 year ago: 0 points
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Security Vulnerabilities** (15 points)
+  - No vulnerabilities: 15 points
+  - Low severity only: 10 points
+  - Moderate severity: 5 points
+  - High severity: 0 points
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **License** (5 points)
+  - Has valid license: 5 points
+  - No license: 0 points
 
-### `npm run eject`
+#### Code Quality (20 points)
+- **Bundle Size** (10 points)
+  - <100KB: 10 points
+  - 100KB-500KB: 7 points
+  - 500KB-1MB: 4 points
+  - >1MB: 0 points
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Dependencies** (10 points)
+  - 0-5 dependencies: 10 points
+  - 6-15 dependencies: 7 points
+  - 16-30 dependencies: 4 points
+  - >30 dependencies: 0 points
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Community & Support (15 points)
+- **Issues Management** (8 points)
+  - <10 open issues: 8 points
+  - 10-50 open issues: 5 points
+  - 50-100 open issues: 2 points
+  - >100 open issues: 0 points
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Documentation** (7 points)
+  - Comprehensive README: 7 points
+  - Basic documentation: 4 points
+  - Minimal documentation: 1 point
+  - No documentation: 0 points
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Score Interpretation
 
-## Learn More
+- **90-100**: Excellent - Well-maintained, secure, and popular
+- **75-89**: Good - Generally healthy with minor concerns
+- **60-74**: Fair - Some issues that should be reviewed
+- **40-59**: Poor - Significant concerns, consider alternatives
+- **0-39**: Very Poor - Major issues, avoid if possible
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# Clone the repository
+git clone https://github.com/hiren9979/package-analyzer.git
+cd package-analyzer
 
-### Code Splitting
+# Install dependencies
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Start development server
+npm run dev
+```
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Single Package Analysis
+1. Navigate to the "Single Package" tab
+2. Enter an npm package name (e.g., "react", "lodash")
+3. View detailed health metrics and score
 
-### Making a Progressive Web App
+### Batch Package Analysis
+1. Navigate to the "Package Analyzer" tab
+2. Paste your package.json content
+3. Click "Analyze Dependencies"
+4. Review comprehensive analysis of all dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Tech Stack
 
-### Advanced Configuration
+- **Frontend**: React 19, Vite
+- **Styling**: Tailwind CSS, Bootstrap
+- **UI Components**: shadcn/ui, Radix UI
+- **Charts**: Recharts
+- **HTTP Client**: Axios
+- **Forms**: React Hook Form with Zod validation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Requirements
 
-### Deployment
+- Node.js 20.x or higher
+- npm or yarn package manager
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contributing
 
-### `npm run build` fails to minify
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Links
+
+- [Live Demo](https://your-demo-url.com)
+- [GitHub Repository](https://github.com/hiren9979/package-analyzer)
+- [Report Issues](https://github.com/hiren9979/package-analyzer/issues)
+
+## Acknowledgments
+
+- npm registry for package data
+- GitHub API for repository information
+- Open Source Security Platform for vulnerability data
