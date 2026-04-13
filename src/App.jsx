@@ -92,9 +92,6 @@ function App() {
           </div>
         )}
       </Container>
-      
-      {/* Keyboard Shortcuts Helper */}
-      <KeyboardShortcuts />
     </div>
   );
 }
