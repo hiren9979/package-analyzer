@@ -1,0 +1,95 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,900,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Bootstrap overrides for Swiss & High-Contrast Brutalist aesthetic */
+:root {
+  --bs-border-radius: 0;
+  --bs-body-font-family: 'JetBrains Mono', monospace;
+  --bs-body-color: #0B0B0B;
+  --bs-body-bg: #FFFFFF;
+  --bs-border-color: #0B0B0B;
+}
+
+* {
+  box-shadow: none !important;
+}
+
+body {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFFFF;
+  color: #0B0B0B;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+h1 {
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+h2, h3 {
+  font-weight: 800;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.fs-7 {
+  font-size: 0.875rem;
+}
+
+/* Override Bootstrap focus styles */
+.form-control:focus {
+  border-color: #0B0B0B !important;
+  outline: 2px solid #0B0B0B !important;
+  box-shadow: none !important;
+}
+
+.btn:focus,
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+/* Status badge animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.badge-worst {
+  animation: pulse 2s infinite;
+}
+
+/* Accordion smooth animation */
+.accordion-collapse {
+  transition: height 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0B0B0B;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
