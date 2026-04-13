@@ -2,13 +2,16 @@
 
 A powerful tool to analyze and explore npm package dependencies, health metrics, and security insights.
 
-## Features
+## 🚀 Features
 
 - **Single Package Analysis**: Search and analyze any npm package for health metrics
 - **Batch Package Analysis**: Upload your package.json to analyze all dependencies at once
 - **Comprehensive Scoring**: Get detailed package health scores from 0-100
 - **Dependency Insights**: Understand package relationships and potential issues
 - **Modern UI**: Clean, responsive interface built with React and Tailwind CSS
+
+## 🔗 Live Demo
+[Package Analyzer Live](https://package-analyzer-git-main-hiren-s-projects-5402ddc3.vercel.app)
 
 ## Package Health Score
 
@@ -141,14 +144,14 @@ npm run dev
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Links
+## 🔗 Links
 
-- [Live Demo](https://your-demo-url.com)
-- [GitHub Repository](https://github.com/hiren9979/package-analyzer)
-- [Report Issues](https://github.com/hiren9979/package-analyzer/issues)
+- **Live Demo**: [package-analyzer-git-main-hiren-s-projects-5402ddc3.vercel.app](https://package-analyzer-git-main-hiren-s-projects-5402ddc3.vercel.app)
+- **GitHub Repository**: [github.com/hiren9979/package-analyzer](https://github.com/hiren9979/package-analyzer)
+- **Report Issues**: [github.com/hiren9979/package-analyzer/issues](https://github.com/hiren9979/package-analyzer/issues)
 
-## Acknowledgments
+## Data Sources
 
 - npm registry for package data
-- GitHub API for repository information
+- GitHub API for repository information  
 - Open Source Security Platform for vulnerability data
